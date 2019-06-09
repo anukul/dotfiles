@@ -1,0 +1,8 @@
+[user]
+	email = anukulsangwan@icloud.com
+	name = Anukul Sangwan
+[core]
+	editor = micro
+	excludesfile = /home/anukul/.gitignore_global
+[alias]
+	pushf = push --force-with-lease
