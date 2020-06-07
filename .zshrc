@@ -20,6 +20,7 @@ source ~/.p10k.zsh
 
 # general aliases
 alias c='clear'
+alias ls='ls -G'
 alias l='ls'
 alias ll='ls -lh'
 alias m='micro'
