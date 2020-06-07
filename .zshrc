@@ -23,6 +23,7 @@ alias c='clear'
 alias l='ls'
 alias ll='ls -lh'
 alias m='micro'
+alias ..='cd ..'
 
 # git aliases
 alias gs='git status'
