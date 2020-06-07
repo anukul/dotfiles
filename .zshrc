@@ -1,7 +1,8 @@
-# powerlevel10k instant prompt
+# p10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
 
 # load antibody
 source <(antibody init)
@@ -20,9 +21,12 @@ autoload -Uz compinit
 compinit -i
 ###
 
-
 # to customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 source ~/.p10k.zsh
+
+# p10k overrides
+typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='$'
+typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_with_package_name
 
 # general aliases
 alias c='clear'
