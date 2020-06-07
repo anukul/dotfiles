@@ -44,3 +44,6 @@ alias gc='git commit'
 # gopath
 export GOPATH=$HOME/code/gopath
 export PATH=$PATH:$GOPATH/bin
+
+# local binaries
+export PATH=$PATH:$HOME/.local/bin
