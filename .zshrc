@@ -1,13 +1,7 @@
-# enable powerlevel10k instant prompt. should stay close to the top of ~/.zshrc.
-# initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# base16 shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # load antibody
 source <(antibody init)
@@ -21,6 +15,11 @@ antibody bundle zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 ###
+antibody bundle zsh-users/zsh-completions
+autoload -Uz compinit
+compinit -i
+###
+
 
 # to customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 source ~/.p10k.zsh
