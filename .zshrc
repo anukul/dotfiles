@@ -16,6 +16,11 @@ source <(antibody init)
 antibody bundle romkatv/powerlevel10k
 antibody bundle zsh-users/zsh-syntax-highlighting
 antibody bundle zsh-users/zsh-autosuggestions
+###
+antibody bundle zsh-users/zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+###
 
 # to customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 source ~/.p10k.zsh
