@@ -42,8 +42,11 @@ alias gl='git log'
 alias gc='git commit'
 
 # gopath
-export GOPATH=$HOME/code/gopath
-export PATH=$PATH:$GOPATH/bin
+export GOPATH="$HOME/code/gopath"
+export PATH="$PATH:$GOPATH/bin"
 
 # local binaries
-export PATH=$PATH:$HOME/.local/bin
+export PATH="$PATH:$HOME/.local/bin"
+
+# rust cargo binaries
+export PATH="$HOME/.cargo/bin:$PATH"
