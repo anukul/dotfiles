@@ -42,11 +42,21 @@ alias gl='git log'
 alias gc='git commit'
 
 # gopath
-export GOPATH="$HOME/code/gopath"
-export PATH="$PATH:$GOPATH/bin"
+export GOPATH=$HOME/code/gopath
+export PATH=$PATH:$GOPATH/bin
 
 # local binaries
-export PATH="$PATH:$HOME/.local/bin"
+export PATH=$PATH:$HOME/.local/bin
 
 # rust cargo binaries
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$HOME/.cargo/bin:$PATH
+
+
+# android studio (required by react native)
+# note: android studio has an embedded JDK
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"``
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
