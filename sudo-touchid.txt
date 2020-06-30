@@ -1,0 +1,5 @@
+# /etc/pam.d/sudo
+# the following line goes at the top
+# also set iterm > settings > advanced > allow sessions to survive logging out and back in => no
+# or use https://github.com/fabianishere/pam_reattach
+auth       sufficient     pam_tid.so
