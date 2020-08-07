@@ -25,15 +25,14 @@ source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_with_package_name
 typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='$'
 
-# ls colors
-export CLICOLOR=1
-
 # general aliases
 alias c='clear'
+alias ls='exa'
 alias l='ls'
 alias ll='ls -lh'
 alias m='micro'
 alias ..='cd ..'
+alias cat='bat'
 
 # git aliases
 alias gs='git status'
@@ -48,8 +47,11 @@ export PATH=$PATH:$GOPATH/bin
 # local binaries
 export PATH=$PATH:$HOME/.local/bin
 
+# node yarn binaries
+export PATH=$PATH:$(yarn global bin)
+
 # rust cargo binaries
-export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$PATH:$HOME/.cargo/bin
 
 
 # android studio (required by react native)
@@ -60,3 +62,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# asdf
+. $(brew --prefix asdf)/asdf.sh
+export PATH=$HOME/.asdf/shims:$PATH

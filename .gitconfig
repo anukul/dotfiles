@@ -6,3 +6,4 @@
 	excludesfile = ~/.gitignore_global
 [alias]
 	pushf = push --force-with-lease
+    ignored = !git ls-files -v | grep "^[[:lower:]]"
