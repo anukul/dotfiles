@@ -5,17 +5,20 @@ fi
 
 # antibody
 source <(antibody init)
-##
+
 antibody bundle romkatv/powerlevel10k
 antibody bundle zsh-users/zsh-syntax-highlighting
 antibody bundle zsh-users/zsh-autosuggestions
+antibody bundle zsh-users/zsh-completions
 ##
 antibody bundle zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 ##
-antibody bundle zsh-users/zsh-completions
-autoload -Uz compinit && compinit -i
+
+##
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
 ##
 
 # generated using `p10k configure`
@@ -28,6 +31,7 @@ typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='$'
 # general aliases
 alias c='clear'
 alias ls='exa'
+alias fd='find'
 alias l='ls'
 alias ll='ls -lh'
 alias m='micro'
@@ -40,7 +44,22 @@ alias gd='git diff'
 alias gl='git log'
 alias gc='git commit'
 
+# asdf
+##
+hash brew 2>/dev/null && {
+	. $(brew --prefix asdf)/asdf.sh
+}
+hash brew 2>/dev/null || {
+	. $HOME/.asdf/asdf.sh
+}
+##
+fpath=(${ASDF_DIR}/completions $fpath)
+##
+export PATH=$HOME/.asdf/shims:$PATH
+##
+
 # gopath
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/code/gopath
 export PATH=$PATH:$GOPATH/bin
 
@@ -63,6 +82,5 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# asdf
-. $(brew --prefix asdf)/asdf.sh
-export PATH=$HOME/.asdf/shims:$PATH
+# load completions
+autoload -Uz compinit && compinit -i
