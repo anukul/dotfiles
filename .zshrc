@@ -31,7 +31,6 @@ typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='$'
 # general aliases
 alias c='clear'
 alias ls='exa'
-alias fd='find'
 alias l='ls'
 alias ll='ls -lh'
 alias m='micro'
