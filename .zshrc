@@ -37,6 +37,15 @@ alias m='micro'
 alias ..='cd ..'
 alias cat='bat'
 
+alias k='kubectl'
+alias t='tubectl'
+alias mk='minikube'``
+alias be='bundle exec'
+
+function kept() {
+	cd ~/code/keptn/keptn/cli && CGO_CFLAGS=-mmacosx-version-min=10.12 go run -ldflags="-X 'main.Version=${KEPTN_VERSION:-0.6.2}'" main.go $@
+}
+
 # git aliases
 alias gs='git status'
 alias gd='git diff'
@@ -51,9 +60,11 @@ hash brew 2>/dev/null && {
 hash brew 2>/dev/null || {
 	. $HOME/.asdf/asdf.sh
 }
-##
-fpath=(${ASDF_DIR}/completions $fpath)
-##
+# add completions to $fpath
+fpath=($fpath ${ASDF_DIR}/completions)
+# load completions
+autoload -Uz compinit && compinit
+# add binaries to $PATH
 export PATH=$HOME/.asdf/shims:$PATH
 ##
 
@@ -68,18 +79,21 @@ export PATH=$PATH:$HOME/.local/bin
 # node yarn binaries
 export PATH=$PATH:$(yarn global bin)
 
+# python binaries
+export PATH=$PATH:$HOME/Library/Python/3.8/bin
+
 # rust cargo binaries
 export PATH=$PATH:$HOME/.cargo/bin
 
 
 # android studio (required by react native)
 # note: android studio has an embedded JDK
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"``
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"``
+# export ANDROID_HOME=$HOME/Library/Android/sdk
+# export PATH=$PATH:$ANDROID_HOME/emulator
+# export PATH=$PATH:$ANDROID_HOME/tools
+# export PATH=$PATH:$ANDROID_HOME/tools/bin
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# load completions
-autoload -Uz compinit && compinit -i
+# fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
