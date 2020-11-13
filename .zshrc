@@ -36,6 +36,7 @@ alias ll='ls -lh'
 alias m='micro'
 alias ..='cd ..'
 alias cat='bat'
+alias du='dust'
 
 alias k='kubectl'
 alias t='tubectl'
