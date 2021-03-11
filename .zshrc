@@ -43,10 +43,6 @@ alias t='tubectl'
 alias mk='minikube'``
 alias be='bundle exec'
 
-function kept() {
-	cd ~/code/keptn/keptn/cli && CGO_CFLAGS=-mmacosx-version-min=10.12 go run -ldflags="-X 'main.Version=${KEPTN_VERSION:-0.6.2}'" main.go $@
-}
-
 # git aliases
 alias gs='git status'
 alias gd='git diff'
@@ -81,11 +77,13 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$(yarn global bin)
 
 # python binaries
-export PATH=$PATH:$HOME/Library/Python/3.8/bin
+export PATH=$PATH:$HOME/Library/Python/3.9/bin
 
 # rust cargo binaries
 export PATH=$PATH:$HOME/.cargo/bin
 
+# postgres.app
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # android studio (required by react native)
 # note: android studio has an embedded JDK
@@ -98,3 +96,7 @@ export PATH=$PATH:$HOME/.cargo/bin
 
 # fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true

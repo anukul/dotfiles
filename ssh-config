@@ -1,4 +1,0 @@
-Host storyscript
-	HostName 35.186.183.188
-	User ro
-	IdentityFile ~/.ssh/keys/ss

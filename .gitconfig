@@ -6,4 +6,8 @@
 	excludesfile = ~/.gitignore_global
 [alias]
 	pushf = push --force-with-lease
-    ignored = !git ls-files -v | grep "^[[:lower:]]"
+    hide = update-index --assume-unchanged
+    unhide = update-index --no-assume-unchanged
+    unhide-all = update-index --really-refresh
+    hidden = !git ls-files -v | grep \"^[a-z]\"
+    ignored = !git status -s --ignored | grep \"^!!\"
