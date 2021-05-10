@@ -5,6 +5,9 @@ fi
 
 setopt interactivecomments
 
+# linuxbrew
+test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
 # antibody
 source <(antibody init)
 
@@ -57,13 +60,12 @@ alias gc='git commit'
 hash brew 2>/dev/null && {
 	. $(brew --prefix asdf)/asdf.sh
 }
-hash brew 2>/dev/null || {
-	. $HOME/.asdf/asdf.sh
-}
+
 # add completions to $fpath
 fpath=($fpath ${ASDF_DIR}/completions)
 # load completions
 autoload -Uz compinit && compinit
+
 # add binaries to $PATH
 export PATH=$HOME/.asdf/shims:$PATH
 ##
@@ -104,3 +106,7 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+# virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source ~/Library/Python/3.9/bin/virtualenvwrapper.sh

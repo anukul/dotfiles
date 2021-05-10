@@ -1,9 +1,12 @@
 [user]
 	email = anukulsangwan@icloud.com
 	name = Anukul Sangwan
+
 [core]
 	editor = micro
 	excludesfile = ~/.gitignore_global
+	pager = delta
+
 [alias]
 	pushf = push --force-with-lease
     hide = update-index --assume-unchanged
@@ -11,3 +14,17 @@
     unhide-all = update-index --really-refresh
     hidden = !git ls-files -v | grep \"^[a-z]\"
     ignored = !git status -s --ignored | grep \"^!!\"
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+
