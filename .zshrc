@@ -3,6 +3,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+setopt interactivecomments
+
 # antibody
 source <(antibody init)
 
@@ -39,6 +41,7 @@ alias cat='bat'
 alias du='dust'
 
 alias k='kubectl'
+alias dc='docker-compose'
 alias t='tubectl'
 alias mk='minikube'``
 alias be='bundle exec'
@@ -66,9 +69,10 @@ export PATH=$HOME/.asdf/shims:$PATH
 ##
 
 # gopath
-export PATH=$PATH:/usr/local/go/bin
+export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/code/gopath
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 # local binaries
 export PATH=$PATH:$HOME/.local/bin
