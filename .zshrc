@@ -108,5 +108,5 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
 # virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 source ~/Library/Python/3.9/bin/virtualenvwrapper.sh
