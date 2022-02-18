@@ -71,10 +71,8 @@ export PATH=$HOME/.asdf/shims:$PATH
 ##
 
 # gopath
-export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/code/gopath
 export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
 
 # local binaries
 export PATH=$PATH:$HOME/.local/bin
@@ -109,4 +107,4 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-source ~/Library/Python/3.9/bin/virtualenvwrapper.sh
+# source ~/Library/Python/3.9/bin/virtualenvwrapper.sh
