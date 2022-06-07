@@ -4,7 +4,7 @@ set -euo pipefail
 # modified from source: https://blog.filippo.io/cleaning-up-my-gopath-with-homebrew/
 
 if [[ $# -lt 1 ]]; then
-    echo "Usage: brew-go-get github.com/foo/bar ..."
+    echo "Usage: brew-go-install github.com/foo/bar ..."
     exit 1
 fi
 
