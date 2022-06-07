@@ -1,0 +1,22 @@
+#!/bin/bash
+set -euo pipefail
+
+# modified from source: https://blog.filippo.io/cleaning-up-my-gopath-with-homebrew/
+
+if [[ $# -lt 1 ]]; then
+    echo "Usage: brew-go-get github.com/foo/bar ..."
+    exit 1
+fi
+
+NAME=$(basename "$1")
+VERSION=$(date '+%Y-%m-%d')
+
+unset GOBIN
+export GOPATH="$(brew --prefix)/Cellar/go-install-$NAME/$VERSION"
+
+go install -modcacherw "$@"
+
+rm -rf "$GOPATH/pkg" "$GOPATH/src"
+
+brew unlink "go-install-$NAME" 2> /dev/null || true
+brew link "go-install-$NAME"
