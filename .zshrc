@@ -1,3 +1,6 @@
+# brew
+eval $(/opt/homebrew/bin/brew shellenv)
+
 # p10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -76,9 +79,6 @@ export PATH=$PATH:$GOPATH/bin
 
 # local binaries
 export PATH=$PATH:$HOME/.local/bin
-
-# node yarn binaries
-export PATH=$PATH:$(yarn global bin)
 
 # python binaries
 export PATH=$PATH:$HOME/Library/Python/3.9/bin
