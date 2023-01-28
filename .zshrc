@@ -97,4 +97,4 @@ export PATH=$PATH:$HOME/.foundry/bin
 
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-source virtualenvwrapper.sh
+PATH=$PATH:/usr/share/virtualenvwrapper source virtualenvwrapper.sh
