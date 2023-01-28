@@ -59,19 +59,15 @@ alias gl='git log'
 alias gc='git commit'
 
 # asdf
-##
 hash brew 2>/dev/null && {
-	. $(brew --prefix asdf)/asdf.sh
+	source `brew --prefix asdf`/libexec/asdf.sh
 }
+export PATH=$HOME/.asdf/shims:$PATH
 
 # add completions to $fpath
 fpath=($fpath ${ASDF_DIR}/completions)
 # load completions
 autoload -Uz compinit && compinit
-
-# add binaries to $PATH
-export PATH=$HOME/.asdf/shims:$PATH
-##
 
 # gopath
 export GOPATH=$HOME/code/gopath
@@ -89,6 +85,9 @@ export PATH=$PATH:$HOME/.cargo/bin
 # postgres.app
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
+# foundry
+export PATH=$PATH:$HOME/.foundry/bin
+
 # android studio (required by react native)
 # note: android studio has an embedded JDK
 # export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"``
@@ -98,13 +97,6 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 # export PATH=$PATH:$ANDROID_HOME/tools/bin
 # export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
-
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-# source ~/Library/Python/3.9/bin/virtualenvwrapper.sh
+source virtualenvwrapper.sh
