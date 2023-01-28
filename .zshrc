@@ -1,6 +1,3 @@
-# brew
-eval $(/opt/homebrew/bin/brew shellenv)
-
 # p10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -60,6 +57,7 @@ alias gc='git commit'
 
 # asdf
 hash brew 2>/dev/null && {
+	eval $(/opt/homebrew/bin/brew shellenv)
 	source `brew --prefix asdf`/libexec/asdf.sh
 }
 export PATH=$HOME/.asdf/shims:$PATH
