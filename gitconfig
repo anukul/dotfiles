@@ -1,0 +1,23 @@
+[core]
+	editor = micro
+	pager = delta
+
+[alias]
+	pushf = push --force-with-lease
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = unobtrusive-line-numbers decorations
+
+[merge]
+    conflictstyle = zdiff3
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/op plugin run -- gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/op plugin run -- gh auth git-credential
