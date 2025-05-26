@@ -1,3 +1,6 @@
 __pycache__/
-.DS_Store/
+.DS_Store
 config/iterm2
+config/micro/buffers
+fonts/*
+!fonts/*.zip
