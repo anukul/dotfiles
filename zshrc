@@ -1,3 +1,6 @@
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # zsh prompt
 eval "$(starship init zsh)"
 
