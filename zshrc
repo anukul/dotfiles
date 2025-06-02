@@ -24,3 +24,8 @@ export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
 # mise (version manager)
 eval "$(mise activate zsh)"
+
+# binaries
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
