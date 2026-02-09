@@ -2,9 +2,6 @@
 	name = Anukul Sangwan
 	email = anukulsangwan@icloud.com
 
-[includeIf "gitdir:~/code/aegis/"]
-	path = ~/code/aegis/gitconfig
-
 [core]
 	editor = micro
 	pager = delta
