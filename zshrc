@@ -21,7 +21,7 @@ bindkey '^[[B' history-substring-search-down
 source $HOME/.zsh_aliases
 
 # 1password
-source $HOME/.config/op/plugins.sh
+[[ -f $HOME/.config/op/plugins.sh ]] && source $HOME/.config/op/plugins.sh
 
 # windsurf
 export PATH="$HOME/.codeium/windsurf/bin:$PATH"
